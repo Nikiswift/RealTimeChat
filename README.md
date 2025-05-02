@@ -1,31 +1,31 @@
 
-# 📱 Real-Time Chat Interface
+# 📱 Real-Time Chat Interface (iOS - SwiftUI)
 
-A single-screen mobile chat application built to support real-time communication via WebSockets (PieSocket) and robust offline functionality. This project demonstrates message syncing, queuing, error handling, and clean UI flow for chat interfaces.
+An iOS single-screen mobile chat application built with SwiftUI and Combine, supporting real-time communication via WebSockets (PieSocket) and robust offline functionality. This project demonstrates message syncing, queuing, error handling, and clean UI flow for chat interfaces.
 
 ---
 
 ## 🚀 Features
 
-- **Single Screen Interface** with chat list and message previews
-- **Real-Time Updates** using WebSocket (PieSocket)
-- **Offline Message Queueing** and automatic resending
+- **Single Screen Interface** using SwiftUI
+- **Real-Time WebSocket Updates** with PieSocket
+- **Offline Message Queueing** using local state/cache
 - **Error Handling** for API/network failures
 - **Empty State Management**
-- **Chatbot Integration**
+- **Chatbot Conversation View**
 - **Unread Message Previews**
-- *(Optional)* Multi-conversation support
+- *(Optional)* Individual chat switching
 
 ---
 
 ## 🔌 WebSocket Configuration
 
 - **Provider**: [PieSocket](https://www.piesocket.com/)
-- **Main WebSocket URL**:  
+- **WebSocket URL**:
   ```
   wss://s14580.blr1.piesocket.com/v3/1?api_key=ydm0NnRNVKRMYkOaw89HMVIiJEYctiDciIslelMZ&notify_self=0
   ```
-- **API Key**:  
+- **API Key**:
   ```
   ydm0NnRNVKRMYkOaw89HMVIiJEYctiDciIslelMZ
   ```
@@ -34,72 +34,73 @@ A single-screen mobile chat application built to support real-time communication
 
 ## 📦 Deliverables
 
-- ✅ GitHub Repository (code)
-- ✅ APK File for Android Testing (if applicable)
-- ✅ Demo Recording (online & offline flow)
+- ✅ GitHub Repository with Swift code
+- ✅ TestFlight/IPA or Xcode build for testing
+- ✅ Demo recording of online & offline behavior
 
 ---
 
-## 📲 How to Run
+## 🧑‍💻 How to Run (iOS)
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/your-username/realtime-chat-interface.git
-   cd realtime-chat-interface
+   git clone https://github.com/your-username/realtime-chat-ios.git
+   cd realtime-chat-ios
    ```
 
-2. Install dependencies:
-   ```bash
-   npm install # or yarn install
-   ```
+2. Open `RealTimeChat.xcodeproj` or `RealTimeChat.xcworkspace` in **Xcode 14+**
 
-3. Start the project:
-   ```bash
-   npm run start # or use Xcode/Android Studio for native platforms
-   ```
+3. Select your simulator or device and hit **Run ▶️**
 
 ---
 
-## 📶 Offline Strategy
+## 🧵 Offline Strategy
 
-- Messages that fail due to no network are **queued locally**.
-- On reconnection, the app **auto-retries sending** those messages.
-- User feedback via toast/snackbar.
+- Failed messages are **stored locally** (e.g., `@State`, `@AppStorage`, or `FileManager`)
+- Once network is restored, the app **auto-retries** those messages.
+- Network reachability can be tracked via NWPathMonitor or Reachability.swift.
 
 ---
 
 ## ⚠️ Error & Edge Case Handling
 
-- 🚫 No Internet → Proper alert shown.
-- 🚫 No Chats Available → UI shows empty state.
-- ❌ WebSocket/API Failure → Handled with fallback logic and alerts.
+- 📴 No Internet → SwiftUI alert/snackbar
+- 📭 No Chats Available → Empty state UI
+- 🔌 WebSocket Failure → Retry or show error
 
 ---
 
 ## 📹 Demo
 
-> 📽 A screen recording is included showing both **online** and **offline** functionality.
+> 🎥 A screen recording is provided showing online and offline messaging.
 
 ---
 
 ## 🧪 Testing
 
-- Real-time: Try chatting from two clients and verify instant updates.
-- Offline: Kill network and send messages, observe retry when online.
-- Restart: All chats clear on app close as expected.
+- Real-time test: Two devices/simulators see synced messages
+- Offline test: Kill Wi-Fi, send messages → observe resend after reconnection
+- Restart test: Conversations clear on relaunch as expected
 
 ---
 
-## 📎 Resources
+## 📚 Resources
 
 - [PieSocket Tester](https://piehost.com/websocket-tester)
-- [PieSocket Docs](https://www.piesocket.com/docs/3.0)
+- [Combine Documentation](https://developer.apple.com/documentation/combine)
+- [SwiftUI Documentation](https://developer.apple.com/xcode/swiftui/)
 
 ---
 
 ## 🛠 Tech Stack
 
-- React Native / SwiftUI / Kotlin (your stack here)
-- WebSockets (PieSocket)
-- Async Storage / CoreData for offline queueing
-- State Management: Redux / Context API / Swift Combine
+- **Swift 5.9+**
+- **SwiftUI**
+- **Combine**
+- **URLSession** & **WebSocketTask**
+- **NWPathMonitor** (for offline detection)
+- **MVVM Architecture**
+
+---
+
+Happy Coding! 🎉
