@@ -29,29 +29,6 @@ An iOS single-screen mobile chat application built with SwiftUI and Combine, sup
   ```
   ydm0NnRNVKRMYkOaw89HMVIiJEYctiDciIslelMZ
   ```
-
----
-
-## 📦 Deliverables
-
-- ✅ GitHub Repository with Swift code
-- ✅ TestFlight/IPA or Xcode build for testing
-- ✅ Demo recording of online & offline behavior
-
----
-
-## 🧑‍💻 How to Run (iOS)
-
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/your-username/realtime-chat-ios.git
-   cd realtime-chat-ios
-   ```
-
-2. Open `RealTimeChat.xcodeproj` or `RealTimeChat.xcworkspace` in **Xcode 14+**
-
-3. Select your simulator or device and hit **Run ▶️**
-
 ---
 
 ## 🧵 Offline Strategy
@@ -67,14 +44,6 @@ An iOS single-screen mobile chat application built with SwiftUI and Combine, sup
 - 📴 No Internet → SwiftUI alert/snackbar
 - 📭 No Chats Available → Empty state UI
 - 🔌 WebSocket Failure → Retry or show error
-
----
-
-## 📹 Demo
-
-> 🎥 A screen recording is provided showing online and offline messaging.
-
----
 
 ## 🧪 Testing
 
