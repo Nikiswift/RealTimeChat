@@ -53,7 +53,11 @@ An iOS single-screen mobile chat application built with SwiftUI and Combine, sup
 
 ---
 
-## 📚 Resources
+##
+💻 video Demo
+https://github.com/user-attachments/assets/eb9c3a08-d67c-42ff-8480-67bf2b39acec
+
+ 📚 Resources
 
 - [PieSocket Tester](https://piehost.com/websocket-tester)
 - [Combine Documentation](https://developer.apple.com/documentation/combine)
